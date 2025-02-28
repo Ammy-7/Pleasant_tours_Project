@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<style>
+        * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+
+    }
+
+    body {
+      font-family: "popins";
+    }
+
+    h1 {
+      font-weight: 1000;
+      font-size: 3rem;
+     /* font-family: poppins; */
+    }
+
+    h2 {
+      font-weight: 900;
+      font-size: 1.8rem;
+    }
+
+    h3 {
+      font-weight: 800;
+      font-size: 1.4rem;
+    }
+
+    h4 {
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    h5 {
+      font-weight: 400;
+      font-size: 1rem;
+      color: #1d1d1d;
+    }
+
+    h6 {
+      color: #d8d8d8;
+    }
+    
+    hr {
+      width: 70px;
+      height: 2px;
+      background-color: #1f7f9f;
+    }
+    button {
+      font-size: 0.8rem;
+      font-weight: 600;
+      border: none;
+      outline: none;
+      background-color: #2f98ba;
+      color: white;
+      padding: 10px 18px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: 0.3s ease;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #3fa4c5;
+    }
+      /* navbar */
+      .navbar {
+      font-size: 13px;
+      top: 0;
+      left: 0;
+    }
+
+    .navbar-light .navbar-nav {
+      padding: 0 20px;
+      color: black;
+    }
+
+    .navbar-light .navbar-nav .nav-link:hover,
+    .navbar-light .navbar-nav .nav-link {
+      color: #279fc6;
+    }
+
+    .nav-link {
+      color: black;
+      position: relative;
+      font-weight: 400;
+    }
+
+    .nav-link::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      background-color: #2f98ba;
+      visibility: hidden;
+      transition: 0.3s ease-in-out;
+    }
+
+    .nav-link:hover:before,
+    .nav-link.act:before {
+      width: 100%;
+      visibility: visible;
+    }
+
+    .navbar span {
+      color: #2f98ba;
+    }
+    /* footer */
+    .footer {
+      background-color: #2f98ba;
+    
+    }
+    .footer hr{
+      width: 100%;
+    }
+    .logo{
+      color: #1d1d1d;
+      text-decoration: none;
+    }
+    .list-line-item{
+    display: inline;
+   }
+   #contact{
+    background-image: url(images/b2.jpg);
+    width: 100;
+      height: 80vh;
+      background-size: cover;
+      color: black;
+      background-position: top 60px center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      text-align: start;
+      font-size: 1.5rem;
+      padding-left: 15px;
+      padding-top: 190px;
+   }
+   /* .banner-header .author .avatar {
+        width: 27px;
+        height: 27px;
+        overflow: hidden;
+        border-radius: 50%;
+        margin-right: 5px;
+    } */
+
+    /* .banner-header .post {
+        margin-top: 20px;
+    }
+
+    .banner-header .post div {
+        display: inline-block;
+    }
+
+    .banner-header .post .author {
+        margin-right: 20px;
+        font-size: 13px;
+    }
+
+    .banner-header .post .date-comment {
+        position: relative;
+        font-size: 13px;
+        color: #fff;
+        margin-right: 20px
+    }
+
+    .banner-header .post .date-comment i {
+        color: #fff;
+        font-size: 16px;
+        margin-right: 5px;
+    }
+
+    .banner-header .post .date-comment:last-of-type {
+        margin-right: 0px;
+    } */
+   .right-sidebar .item h2 {
+        display: block;
+        height: 80px;
+        line-height: 80px;
+        text-align: center;
+        width: 100%;
+        margin: 0;
+        background: #2095AE;
+        font-family: 'Poppins', sans-serif;
+        font-size: 20px;
+        color: #fff;
+        font-weight: 600;
+    }
+
+    .right-sidebar .item-form {
+        background: #f4f5f8;
+        padding: 45px 25px;
+    }
+
+    .right-sidebar .item h2 {
+        display: block;
+        height: 80px;
+        line-height: 80px;
+        text-align: center;
+        width: 100%;
+        margin: 0;
+        background: #2095AE;
+        font-family: 'Poppins', sans-serif;
+        font-size: 20px;
+        color: #fff;
+        font-weight: 600;
+    }
+
+    .right-sidebar .item-form {
+        background: #f4f5f8;
+        padding: 45px 25px;
+        margin-bottom: 10px;
+    }
+
+    /* phone-call button */
+    .phone-call {
+        display: flex;
+        align-items: center;
+    }
+
+    .phone-call .icon {
+        position: relative;
+        top: 20px;
+    }
+
+    .phone-call .icon span {
+        font-size: 36px;
+        color: #2095AE;
+    }
+
+    .phone-call .icon.color-1 span {
+        font-size: 36px;
+        color: #fff;
+    }
+
+    .phone-call .text {
+        margin-left: 20px;
+        margin-top: 30px;
+    }
+
+    .phone-call .text p {
+        font-size: 16px;
+        margin: 0;
+    }
+
+    .phone-call .text a {
+        font-size: 24px;
+        color: #2095AE;
+        font-family: 'Barlow', sans-serif;
+    }
+
+    .phone-call .text a.color-1 {
+        color: #fff;
+        font-family: 'Barlow', sans-serif;
+        font-weight: 400;
+    }
+
+
+    /* text field */
+    input[type="password"]:focus,
+    input[type="email"]:focus,
+    input[type="text"]:focus,
+    input[type="file"]:focus,
+    input[type="radio"]:focus,
+    input[type="checkbox"]:focus,
+    textarea:focus {
+        outline: none;
+    }
+
+    input[type="password"],
+    input[type="email"],
+    input[type="text"],
+    input[type="file"],
+    textarea {
+        outline: none;
+        max-width: 100%;
+        margin-bottom: 0px;
+        padding: 20px;
+        height: auto;
+        background: #fff;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        border: none;
+        border-radius: 0px;
+        display: block;
+        width: 100%;
+        line-height: 1.5em;
+        font-family: 'Barlow', sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        color: #676977;
+    }
+
+    input:focus,
+    textarea:focus {
+        border-bottom-width: 1px;
+        border-color: #2095AE;
+    }
+
+    input[type="submit"],
+    input[type="reset"],
+    input[type="button"],
+    button {
+        text-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        line-height: 1.75em;
+        -webkit-transition: background-color .15s ease-out;
+        transition: background-color .15s ease-out;
+        background: transparent;
+        border: 0px solid transparent;
+    }
+
+    input[type="submit"]:hover,
+    input[type="reset"]:hover,
+    button:hover {
+        border: 0px solid transparent;
+    }
+
+    select {
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    table,
+    th,
+    tr,
+    td {
+        border: 1px solid #f4f5f8;
+    }
+
+    th,
+    tr,
+    td {
+        padding: 10px;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+        display: inline;
+    }
+
+    input[type="submit"] {
+        font-weight: 400;
+        font-family: 'Barlow', sans-serif;
+        text-transform: uppercase;
+        background: #2095AE;
+        color: #fff;
+        padding: 8px 24px;
+        margin: 0;
+        position: relative;
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+
+    .alert-success {
+        background: transparent;
+        color: #676977;
+        border: 1px solid #2095AE;
+        border-radius: 0px;
+    }
+
+    /* placeholder */
+    ::-webkit-input-placeholder {
+        color: #676977;
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    :-moz-placeholder {
+        color: #676977;
+    }
+
+    ::-moz-placeholder {
+        color: #676977;
+        opacity: 1;
+    }
+
+    :-ms-input-placeholder {
+        color: #676977;
+    }
+
+    /* ======= CountUp Numbers style ======= */
+    .numbers {
+        background-attachment: fixed;
+    }
+
+    .numbers .item img {
+        position: absolute;
+        width: 50%;
+        right: -30%;
+        top: 30%;
+        z-index: 4;
+    }
+
+    .numbers .item img.tobotm {
+        -webkit-transform: rotateX(180deg);
+        transform: rotateX(180deg);
+        top: 15%;
+    }
+
+    .numbers .item:hover .icon .front {
+        -webkit-transform: translateX(-120%);
+        transform: translateX(-120%);
+        -webkit-transition: all .3s ease;
+        transition: all .3s ease;
+    }
+
+    .numbers .item:hover .icon .back {
+        -webkit-transform: translateX(0%);
+        transform: translateX(0%);
+        -webkit-transition: all .3s ease;
+        transition: all .3s ease;
+    }
+
+    .numbers .item .icon {
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        font-size: 30px;
+        margin-bottom: 10px;
+        color: #fff;
+        border-radius: 50%;
+        border: 7px solid rgba(255, 255, 255, 0.1);
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+    }
+
+    .numbers .item .icon span,
+    .numbers .item .icon i {
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        right: 5px;
+        bottom: 5px;
+        line-height: 80px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.2);
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+    }
+
+    .numbers .item .icon .back {
+        -webkit-transform: translateX(120%);
+        transform: translateX(120%);
+        background: rgba(255, 255, 255, 0.2);
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+        color: #fff;
+    }
+
+    .numbers .item h3 {
+        font-weight: 600;
+        font-family: 'Poppins', sans-serif;
+        margin-bottom: 10px;
+        font-size: 36px;
+    }
+
+    .numbers .item h6 {
+        font-size: 16px;
+        font-weight: 600;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .numbers .item h6 span {
+        font-size: 16px;
+        color: #2095AE;
+        margin-right: 5px;
+    }
+
+    ol.number {
+        list-style: none;
+        counter-reset: item;
+        margin-bottom: 20px;
+    }
+
+    ol.number li {
+        counter-increment: item;
+        margin-bottom: 10px;
+    }
+
+    ol.number li:before {
+        margin-right: 10px;
+        content: counter(item);
+        background: #2095AE;
+        border-radius: 100%;
+        color: #fff;
+        width: 26px;
+        height: 26px;
+        text-align: center;
+        display: inline-block;
+        font-size: 13px;
+        line-height: 27px;
+    }
+
+
+    /* ======= Clients style ======= */
+    .clients {
+        background: #f4f5f8;
+    }
+
+    .clients .owl-carousel {
+        margin: 20px 0;
+    }
+
+    .clients .clients-logo {
+        opacity: 1;
+        line-height: 0;
+    }
+
+    .clients .clients-logo:hover {
+        opacity: 1;
+    }
+
+    .clients img {
+        -webkit-filter: none;
+        filter: none;
+    }
+
+    .clients img:hover {
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+        -webkit-transition: all .5s;
+        transition: all .5s;
+    }
+</style>
+<body>
+ <!-- Navbar -->
+ <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 fixed-top">
+  <div class="container-fluid">
+    <h2><span>PLEASANT</span> TOURS</h2>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="Gallery.html">Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="pakages.html">Pakages</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="sevices.html">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="contact.html">Contact Us</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2 mr-2" type="search" placeholder="What's in your mind" aria-label="Search">
+        <!-- <span class="material-symbols-outlined">
+          Search
+          </span> -->
+       <button type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+    <section id="contact">
+         <h1>Ready for an Unforgettable Adventure? <br> Book Your Tour Pakages Now.</h1>
+    </section>
+    <section class="contact section-padding mt-5 mb-3">
+      <div class="container">
+          <div class="row mb-90">
+              <div class="col-lg-6  col-md-12 col-12 mb-60">
+                  <h1>Pleasant Tour</h1>
+                  <div class="phone-call mb-30">
+                      <div class="icon"><span class="material-symbols-outlined">
+                        phone_in_talk
+                        </span></div>
+                      <div class="text">
+                          <p>Phone</p> <a href="tel:09937070603">+92 4444-555-00</a>
+                      </div>
+                  </div>
+                  <div class="phone-call mb-30">
+                      <div class="icon"><span class="material-symbols-outlined">
+                        mail
+                        </span></div>
+                      <div class="text">
+                          <p>E-Mail Address</p> <a href="mailto:pleasanttour@gmail.com">pleasanttours@gmail.com</a>
+                      </div>
+                  </div>
+                  <div class="phone-call">
+                      <div class="icon"><span class="material-symbols-outlined">
+                        location_on
+                        </span></div>
+                      <div class="text">
+                          <p>Location</p><a href="#">Pakistan , NY 2333.</a>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-5 mb-30 offset-md-1">
+                  <div class="sidebar">
+                      <div class="right-sidebar">
+                          <div class="right-sidebar item">
+                              <h2>Get in touch</h2>
+                              <form name="contact" action="send-book-now.php" method="post"
+                                  class="right-sidebar item-form contact__form">
+                                  <!-- form message -->
+                                  <div class="row">
+                                      <div class="col-12">
+                                          <div class="alert alert-success contact__msg" style="display: none"
+                                              role="alert"> Your message was sent successfully. </div>
+                                      </div>
+                                  </div>
+                                  <!-- form elements -->
+                                  <div class="row">
+                                      <div class="col-md-6 form-group">
+                                          <input name="nameId" id="nameId" type="text" placeholder="Your Name *"
+                                              required="">
+                                      </div>
+                                      <div class="col-md-6 form-group">
+                                          <input name="emailId" id="emailId" type="text" placeholder="Your Email *"
+                                              required="">
+                                      </div>
+                                      <div class="col-md-12 form-group">
+                                          <input name="phoneId" id="phoneId" type="text" placeholder="Your Number *"
+                                              required="">
+                                      </div>
+                                      <div class="col-md-12 form-group">
+                                          <textarea name="messageId" id="messageId" cols="30" rows="4"
+                                              placeholder="Message *" required=""></textarea>
+                                      </div>
+                                      <div class="col-md-12">
+                                          <button type="submit"
+                                              onclick="return valBookNow();" value="Book Now"
+                                              class="btn btn-style btn-primary">Submit Query</button>
+                                      </div>
+                                  </div>
+                              </form>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- Map Section -->
+          <div class="row">
+              <div class="col-md-12 animate-box fadeInUp animated" data-animate-effect="fadeInUp">
+                  <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14970.142693379468!2d85.8558552!3d20.278083!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a19a113596e498d%3A0xc53a70c8187cddfd!2sPleasant%20Tour%20%26%20Travels!5e0!3m2!1sen!2sin!4v1679565833332!5m2!1sen!2sin"
+                      width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+              </div>
+          </div>
+      </div>
+  </section>
+
+
+ <!-- footer -->
+    <footer class="footer">
+      <div class="text-black pt-5 pb-4">
+        <div class="container text-center text-md-left">
+          <div class="row text-start text-md-left">
+  
+            <div class="col-md-12 col-lg-4 col-12 mx-auto mt-3">
+              <h3 class="text-uppercase mb-4 font-weight-bold text-black">Plesant tour</h3>
+              <p>We Provide Top Destinations Expecially For You Book Now and Enjoy!</p>
+            </div>
+  
+  
+            <div class="col-md-12 col-lg-4 col-xl-2 mx-auto mt-3">
+              <h4 class="text-uppercase mb-4 font-weight-bold text-black">Quick Links</h4>
+              <p>
+                <a href="index.html" class="logo" style="text-decoration: none;">Home</a>
+              </p>
+              <p>
+                <a href="Gallery.html" class="logo" style="text-decoration: none;">Gallery</a>
+              </p>
+              <p>
+                <a href="pakages.html" class="logo" style="text-decoration: none;">Pakages</a>
+              </p>
+              <p>
+                <a href="sevices.html" class="logo" style="text-decoration: none;">Services</a>
+              </p>
+              <p>
+                <a href="contact.html" class="logo" style="text-decoration: none;">Contact Us</a>
+              </p>
+            </div>
+  
+  
+            <div class="col-md-12 col-lg-4 col-12 mx-auto mt-3">
+              <h5 class="text-uppercase mb-4 font-weight-bold text-black">Contact Us </h5>
+              <p>
+                <li class="fas fa-home mr-3"></li>Pakistan , NY 2333.
+              </p>
+              <p>
+                <li class="fas fa-envelope mr-3"></li> pleasanttours@gmail.com
+              </p>
+              <p>
+                <li class="fas fa-phone mr-3"></li> +92 4444-555-00
+              </p>
+              <p>
+                <li class="fas fa-print mr-3"></li> 0000-115-00
+              </p>
+            </div>
+          </div>
+  
+  
+          <hr class="mb-4">
+          <div class="row align-items-center">
+            <div class="col-lg-6 col-md-12 col-12">
+              <p>2024 Plessant tour. All right reserved.
+              </p>
+            </div>
+          
+            <div class="col-lg-6 col-md-12 col-12">
+              <div class="icon  text-center">
+                <ul class="list-unstyled list-line">
+                  <li class="list-line-item">
+                    <a href="#" class="logo  btn-floating btn-sm" style="font: size 23px;"><i
+                        class="fab fa-facebook"></i></a>
+                  </li>
+                  <li class="list-line-item">
+                    <a href="#" class="logo btn-floating btn-sm" style="font: size 23px;"><i class=" fab fa-twitter"></i></a>
+                  </li>
+                  <li class="list-line-item">
+                    <a href="#" class="logo btn-floating btn-sm" style="font: size 23px;"><i
+                        class="fab fa-google-plus"></i></a>
+                  </li>
+                  <li class="list-line-item">
+                    <a href="#" class="logo btn-floating btn-sm" style="font: size 23px;"><i
+                        class="fab fa-linkedin-in"></i></a>
+                  </li>
+  
+  
+                </ul>
+  
+              </div>
+  
+            </div>
+          
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</body>
+</html>

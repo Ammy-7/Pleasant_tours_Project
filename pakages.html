@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+            * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+
+    }
+
+    body {
+      font-family: "popins";
+    }
+
+    h1 {
+      font-weight: 1000;
+      font-size: 3rem;
+     /* font-family: poppins; */
+    }
+
+    h2 {
+      font-weight: 900;
+      font-size: 1.8rem;
+    }
+
+    h3 {
+      font-weight: 800;
+      font-size: 1.4rem;
+    }
+
+    h4 {
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    h5 {
+      font-weight: 400;
+      font-size: 1rem;
+      color: #1d1d1d;
+    }
+
+    h6 {
+      color: #d8d8d8;
+    }
+
+    hr {
+      width: 70px;
+      height: 2px;
+      background-color: #1f7f9f;
+    }
+    button {
+      font-size: 0.8rem;
+      font-weight: 600;
+      border: none;
+      outline: none;
+      background-color: #2f98ba;
+      color: white;
+      padding: 10px 18px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: 0.3s ease;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #3fa4c5;
+    }
+    /* navbar */
+    .navbar {
+      font-size: 13px;
+      top: 0;
+      left: 0;
+    }
+
+    .navbar-light .navbar-nav {
+      padding: 0 20px;
+      color: black;
+    }
+
+    .navbar-light .navbar-nav .nav-link:hover,
+    .navbar-light .navbar-nav .nav-link {
+      color: #279fc6;
+    }
+
+    .nav-link {
+      color: black;
+      position: relative;
+      font-weight: 400;
+    }
+
+    .nav-link::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      background-color: #2f98ba;
+      visibility: hidden;
+      transition: 0.3s ease-in-out;
+    }
+
+    .nav-link:hover:before,
+    .nav-link.act:before {
+      width: 100%;
+      visibility: visible;
+    }
+
+    .navbar span {
+      color: #2f98ba;
+    }
+    #Package {
+        background-image:url(images/p1.jpg);
+        width: 100;
+      height: 90vh;
+      background-size: cover;
+      color: black;
+      background-position: top 60px center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      text-align: start;
+      padding-top: 300px;
+      padding-left: 10px;
+    }
+    .main-card {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 50px;
+        padding:20px;
+        cursor: pointer;
+    }
+
+    .card {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        width: 300px;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+
+    .card-content {
+        padding: 15px;
+    }
+
+    .card-title {
+        font-size: 1.2em;
+        margin: 0;
+        color: #333;
+    }
+
+    .card-description {
+        font-size: 0.9em;
+        color: #070707;
+        margin: 10px 0;
+    }
+
+    .card-price {
+        font-size: 1.1em;
+        color: #000000;
+        margin: 10px 0;
+    }
+
+    .card-button {
+        display: inline-block;
+        text-decoration: none;
+        background-color: #2f98ba;
+        color: black;
+        padding: 10px 15px;
+        border-radius: 5px;
+        font-size: 0.9em;
+        text-align: center;
+        border: none;
+    }
+
+    .card-button:hover {
+        background-color:#3fa4c5 ;
+        color: black;
+    }
+        /* footer */
+        .footer {
+      background-color: #2f98ba;
+    
+    }
+    .footer hr{
+      width: 100%;
+    }
+    .logo{
+      color: #1d1d1d;
+      text-decoration: none;
+    }
+    .list-line-item{
+    display: inline;
+   }
+
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 fixed-top">
+    <div class="container-fluid">
+      <h2><span>PLEASANT</span> TOURS</h2>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="Gallery.html">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="pakages.html">Pakages</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="sevices.html">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="contact.html">Contact Us</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2 mr-2" type="search" placeholder="What's in your mind" aria-label="Search">
+          <!-- <span class="material-symbols-outlined">
+            Search
+            </span> -->
+         <button type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+   <!-- card start -->
+<section id="Package">
+    <h1>Creat Your Journy</h1>
+    <p>Discover the perfect family getaway with our Family Tour Packages. 
+    <br>Enjoy fun, relaxation, & adventure with activities for all ages, 
+    <br> scenic sights, & comfortable accommodations.
+</section>
+<h2 style="text-align: center; margin-top: 20px;">Pleasant Tour Packages</h2>
+<hr class="mx-auto">
+<div class="main-card  container">
+    <div class="card">
+        <img src="images/beach tour img.jpg" alt="">
+        <div class="card-content">
+            <h2 class="card-title">Beach Paradise</h2>
+            <p class="card-description">7 days in a luxury beachfront resort 
+              <br>Daily breakfast and beachside dinner <br>Save 30% if you book by 4th January 25</p>
+            <p class="card-price">PR 50,000</p>
+            <!-- <a href="#" class="card-button">Book Now</a> -->
+            <button class="card-button"><a href=""></a>Book Now</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="images/Mountain Adventure img 2.jpg" alt="Mountain Adventure">
+        <div class="card-content">
+            <h2 class="card-title">Mountain Adventure</h2>
+            <p class="card-description">5-day ski package in the Swiss Alps <br>
+              Scenic winter hikes and snow activities <br>Limited spots available!</p>
+            <p class="card-price">PR 50,000</p>
+            <!-- <a href="#" class="card-button">Book Now</a> -->
+            <button class="card-button"><a href=""></a>Book Now</button>
+        </div>
+    </div>
+    <div class="card">
+        <img src="images/city light img.jpg" alt="City Tour">
+        <div class="card-content">
+            <h2 class="card-title">City Lights</h2>
+            <p class="card-description">Discover vibrant nightlife hotspots 
+              <br>Dinner at a famous local restaurant <br>Limited spots available – now!</p>
+            <p class="card-price">PR 50,000</p>
+            <!-- <a href="#" class="card-button">Book Now</a> -->
+            <button class="card-button"><a href=""></a>Book Now</button>
+        </div>
+    </div>
+</div>
+<h2 style="text-align: center; margin-top: 20px;">International Destinations </h2>
+<hr class="mx-auto">
+    <div class="main-card  container mt-5 py-3">
+    <div class="card">
+        <img src="images/dubai img.jpg" alt="">
+        <div class="card-content">
+            <h2 class="card-title">Dubai, UAE</h2>
+            <p class="card-description">Luxury transportation in a private vehicle
+              <br>Dinner at a 5-star restaurant hotel with Full board meals 5-7 days Trip.</p>
+            <p class="card-price">PR 30,000</p>
+            <!-- <a href="#" class="card-button">Book Now</a> -->
+            <button class="card-button"><a href=""></a>Book Now</button>
+        </div>
+    </div>
+    <div class="card">
+        <img src="images/Maldives.jpg"alt="">
+        <div class="card-content">
+            <h2 class="card-title">Maldives</h2>
+            <p class="card-description">7 days in a luxury overwater villa 
+              <br>Round-trip flights & airport transfers included 25% off for bookings made by 27 Dec 24.<br></p>
+            <p class="card-price">PR 3,5000</p>
+            <!-- <a href="#" class="card-button">Book Now</a> -->
+            <button class="card-button"><a href=""></a>Book Now</button>
+        </div>
+    </div>
+    <div class="card">
+        <img src="images/Baku.jpg" alt="">
+        <div class="card-content">
+            <h2 class="card-title">Baku, Azerbaijan</h2>
+            <p class="card-description">7-day Mediterranean cruise with 5 stops <br>
+              All meals, drinks, and onboard entertainment <br>15% off for early bookings before 25 feb 24</p>
+            <p class="card-price">PR1599</p>
+            <!-- <a href="#" class="card-button">Book Now</a> -->
+            <button class="card-button"><a href=""></a>Book Now</button>
+        </div>
+    </div>
+    <div class="card">
+        <img src="images/Thailand.jpg" alt="">
+        <div class="card-content">
+            <h2 class="card-title">Thailand</h2>
+            <p class="card-description">8 days stay in a 5-star Phuket resort <br>
+              Traditional Thai local food experiences <br>Secure your Thailand adventure now!</p>
+            <p class="card-price">PR 30,000</p>
+            <!-- <a href="#" class="card-button">Book Now</a> -->
+            <button class="card-button"><a href=""></a>Book Now</button>
+        </div>
+    </div>
+    <div class="card">
+        <img src="images/Malaysian 2.jpg" alt="">
+        <div class="card-content">
+            <h2 class="card-title">Malaysia</h2>
+            <p class="card-description">7 days exploring Kuala Lumpur, Penang.
+              Stay in luxury beachfront resorts in Langkawi 15% off for bookings made before 14 January 25</p>
+            <p class="card-price">PR 33,000</p>
+            <!-- <a href="#" class="card-button">Book Now</a> -->
+             <button class="card-button"><a href=""></a>Book Now</button>
+        </div>
+    </div>
+    <div class="card">
+        <img src="images/SINGAPORE.jpg" alt="">
+        <div class="card-content">
+            <h2 class="card-title">Singapore</h2>
+            <p class="card-description">7 Days in Singapore
+              Explore the Marina Bay Sands, and Sentosa Island.
+              15% OFF for bookings before 14th January 2025!</p>
+            <p class="card-price">PR 40,000</p>
+            <!-- <a href="#" class="card-button">Book Now</a> -->
+            <button class="card-button"><a href=""></a>Book Now</button>
+        </div>
+    </div>
+    <div class="card">
+        <img src="images/Istanbul.jpg" alt="">
+        <div class="card-content">
+            <h2 class="card-title">Istanbul, Turkey</h2>
+            <p class="card-description">7 Days in Istanbul, TurkeyDiscover historic sites like Hagia Sophia, Topkapi Palace, & the Grand Bazaar.Book now & get 15% OFF!  </p>
+            <p class="card-price">PR 45,000</p>
+            <!-- <a href="#" class="card-button">Book Now</a> -->
+            <button class="card-button"><a href=""></a>Book Now</button>
+        </div>
+    </div>
+    <div class="card">
+        <img src="images/New York, USA.jpg" alt="">
+        <div class="card-content">
+            <h2 class="card-title">New York, USA</h2>
+            <p class="card-description">New York landmarks, museums,& Broadway shows in 7 days. Book now for 15% OFF! Valid for bookings before 15th February 2025.</p>
+            <p class="card-price">PR 30,000</p>
+            <!-- <a href="#" class="card-button">Book Now</a> -->
+            <button class="card-button"><a href=""></a>Book Now</button>
+        </div>
+    </div>
+    <div class="card">
+        <img src="images/Paris, France.2.jpg" alt="">
+        <div class="card-content">
+            <h2 class="card-title">Paris, France</h2>
+            <p class="card-description">The Eiffel Tower, Notre-Dame,& Montmartre in 7 days. Book now for 10% OFF! Valid for bookings before 15th February 2025.</p>
+            <p class="card-price">PR 32,000</p>
+            <!-- <a href="#" class="card-button">Book Now</a> -->
+            <button class="card-button"><a href=""></a>Book Now</button>
+        </div>
+    </div>
+</div>
+    <h2 style="text-align: center; margin-top: 20px;">Domestic  Destinations</h2>
+    <hr class="mx-auto">
+    <div class="main-card container mt-5 py-3">
+    <div class="card">
+        <img src="images/Kashmir2.jpg" alt="">
+        <div class="card-content">
+            <h2 class="card-title">Kashmir</h2>
+            <p class="card-description">7 Days in Kashmir
+              Stay in luxury houseboats, explore Srinagar, Gulmarg,& enjoy scenic Shikara rides.
+              Save 30% Disscount.</p>
+            <p class="card-price">PR 25,000</p>
+            <!-- <a href="#" class="card-button">Book Now</a> -->
+            <button class="card-button"><a href=""></a>Book Now</button>
+        </div>
+    </div>
+    <div class="card">
+        <img src="images/Burj Khalifa.jpg" alt="">
+        <div class="card-content">
+            <h2 class="card-title">Burj Khalifa </h2>
+            <p class="card-description">7 Days in Dubai, UAE
+             explore the Burj Khalifa & Dubai Mall.
+              Save 25% if you book by 28th February 2025!</p>
+            <p class="card-price">PR 22,000</p>
+            <!-- <a href="#" class="card-button">Book Now</a> -->
+            <button class="card-button"><a href=""></a>Book Now</button>
+        </div>
+    </div>
+    <div class="card">
+        <img src="images/Desert Safari.jpg" alt="">
+        <div class="card-content">
+            <h2 class="card-title">Desert Safari</h2>
+            <p class="card-description"> 8 days Stay in luxury resorts, visit the Burj Khalifa,& experience an exciting Desert Safari.
+              Save 25% if you book by 28th Feb 25!</p>
+            <p class="card-price">PR 24,000</p>
+            <!-- <a href="#" class="card-button">Book Now</a> -->
+            <button class="card-button"><a href=""></a>Book Now</button>
+        </div>
+    </div>
+    <div class="card">
+        <img src="images/Badshahi-Mosque.jpg" alt="">
+        <div class="card-content">
+            <h2 class="card-title">Badshahi Mosque </h2>
+            <p class="card-description">4 Days in Lahore,
+              Stay in luxury hotels, visit the iconic Badshahi Mosque, enjoy a traditional Punjabi experience.
+              Save 20% off.</p>
+            <p class="card-price">PR 25,000</p>
+            <!-- <a href="#" class="card-button">Book Now</a> -->
+            <button class="card-button"><a href=""></a>Book Now</button>
+        </div>
+    </div>
+    <div class="card">
+        <img src="images/Swat (Pakistan).jpg" alt="">
+        <div class="card-content">
+            <h2 class="card-title">Swat</h2>
+            <p class="card-description">3 Days in Swat, Pakistan
+              Stay in hotel, explore the stunning valleys,Malam Jabba. &
+              Save 20% if you book by 28th May 2025!</p>
+            <p class="card-price">PR 20,000</p>
+            <!-- <a href="#" class="card-button">Book Now</a> -->
+            <button class="card-button"><a href=""></a>Book Now</button>
+        </div>
+    </div>
+    <div class="card">
+        <img src="images/goa.jpg" alt="">
+        <div class="card-content">
+            <h2 class="card-title">Goa </h2>
+            <p class="card-description">1 week in Goa
+            explore vibrant markets & pristine beaches. Save 20% if you book by 21st February 2025! offer </p>
+            <p class="card-price">PR 28,000</p>
+            <!-- <a href="#" class="card-button">Book Now</a> -->
+            <button class="card-button"><a href=""></a>Book Now</button>
+        </div>
+    </div>
+    <div class="card">
+        <img src="images/Tokyo (Japan).jpg" alt="">
+        <div class="card-content">
+            <h2 class="card-title">Tokyo </h2>
+            <p class="card-description">6 Days in Tokyo
+              Explore the Shibuya Crossing, Tokyo Tower, and enjoy a day trip. Save 20% if you book by 8th February 2025!</p>
+            <p class="card-price">PR 21,000</p>
+            <!-- <a href="#" class="card-button">Book Now</a> -->
+            <button class="card-button"><a href=""></a>Book Now</button>
+        </div>
+    </div>
+    <div class="card">
+        <img src="images/Kuala lumpur.jpg" alt="">
+        <div class="card-content">
+            <h2 class="card-title">Kuala Lumpur </h2>
+            <p class="card-description">7 Days in Kuala Lumpur stay in hotel 
+              Discover the Petronas Towers and enjoy the dining in vibrant city markets. Save 40% off </p>
+            <p class="card-price">PR 24,000</p>
+            <!-- <a href="#" class="card-button">Book Now</a> -->
+            <button class="card-button"><a href=""></a>Book Now</button>
+        </div>
+    </div>
+    <div class="card">
+        <img src="images/Bangkok.jpg" alt="">
+        <div class="card-content">
+            <h2 class="card-title">Bangkok</h2>
+            <p class="card-description">7 Days in Bangkok stay in hostel
+              Explore the Grand Palace and experience vibrant nightlife. Save 50% if you book by 28th October 2025!</p>
+            <p class="card-price">PR 29,000</p>
+            <!-- <a href="#" class="card-button">Book Now</a> -->
+            <button class="card-button"><a href=""></a>Book Now</button>
+        </div>
+    </div>   
+</div>
+
+ <!-- footer -->
+ <footer class="footer">
+    <div class="text-black pt-5 pb-4">
+      <div class="container text-center text-md-left">
+        <div class="row text-start text-md-left">
+
+          <div class="col-md-12 col-lg-4 col-12 mx-auto mt-3">
+            <h3 class="text-uppercase mb-4 font-weight-bold text-black">Plesant tour</h3>
+            <p>We Provide Top Destinations Expecially For You Book Now and Enjoy!</p>
+          </div>
+
+
+          <div class="col-md-12 col-lg-4 col-xl-2 mx-auto mt-3">
+            <h4 class="text-uppercase mb-4 font-weight-bold text-black">Quick Links</h4>
+            <p>
+              <a href="index.html" class="logo" style="text-decoration: none;">Home</a>
+            </p>
+            <p>
+              <a href="Gallery.html" class="logo" style="text-decoration: none;">Gallery</a>
+            </p>
+            <p>
+              <a href="pakages.html" class="logo" style="text-decoration: none;">Pakages</a>
+            </p>
+            <p>
+              <a href="sevices.html" class="logo" style="text-decoration: none;">Services</a>
+            </p>
+            <p>
+              <a href="contact.html" class="logo" style="text-decoration: none;">Contact Us</a>
+            </p>
+          </div>
+
+
+          <div class="col-md-12 col-lg-4 col-12 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-black">Contact Us </h5>
+            <p>
+              <li class="fas fa-home mr-3"></li>Pakistan , NY 2333.
+            </p>
+            <p>
+              <li class="fas fa-envelope mr-3"></li> pleasanttous@gmail.com
+            </p>
+            <p>
+              <li class="fas fa-phone mr-3"></li> +924444-555-00
+            </p>
+            <p>
+              <li class="fas fa-print mr-3"></li> 0000-115-00
+            </p>
+          </div>
+        </div>
+
+
+        <hr class="mb-4">
+        <div class="row align-items-center">
+          <div class="col-lg-6 col-md-12 col-12">
+            <p>2024 Plessant tour. All right reserved.
+            </p>
+          </div>
+        
+          <div class="col-lg-6 col-md-12 col-12">
+            <div class="icon  text-center">
+              <ul class="list-unstyled list-line">
+                <li class="list-line-item">
+                  <a href="#" class="logo  btn-floating btn-sm" style="font: size 23px;"><i
+                      class="fab fa-facebook"></i></a>
+                </li>
+                <li class="list-line-item">
+                  <a href="#" class="logo btn-floating btn-sm" style="font: size 23px;"><i class=" fab fa-twitter"></i></a>
+                </li>
+                <li class="list-line-item">
+                  <a href="#" class="logo btn-floating btn-sm" style="font: size 23px;"><i
+                      class="fab fa-google-plus"></i></a>
+                </li>
+                <li class="list-line-item">
+                  <a href="#" class="logo btn-floating btn-sm" style="font: size 23px;"><i
+                      class="fab fa-linkedin-in"></i></a>
+                </li>
+
+
+              </ul>
+
+            </div>
+
+          </div>
+        
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+  crossorigin="anonymous"></script>
+    
+</body>
+</html>
